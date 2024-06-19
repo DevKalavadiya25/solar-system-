@@ -1,0 +1,72 @@
+body{
+    margin:0;
+    height:900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#000;
+    overflow: hidden;
+}
+.container{
+    font-size:10px;
+    height:640px;
+    width:640px;
+    position: relative;
+}
+.sun{
+    position: absolute;
+    width:240px;
+    height:240px;
+    top:200px;
+    left:200px;
+    background-color:#ffcc00;
+    border-radius:50%;
+    box-shadow:0 0 3em white;
+}
+.erth,.moon{
+    position: absolute;
+    border-style:solid;
+    border-color: white transparent transparent transparent;
+    border-width:1.5px 1.5px 0 0;
+    border-radius:50%;
+}
+.erth{
+    top:55px;
+    left:50px;
+    width: 480px;
+    height:480px;
+    animation: orbit 36.5s linear  infinite;
+}
+.moon{
+    top:0;
+    right:0;
+    width:128px;
+    height:128px;
+    animation:orbit 2.7s linear  infinite;
+}
+.erth::before,
+
+.moon::before{
+     content: '';
+     position: absolute;
+     border-radius:50%;
+}
+.erth::before{
+    top:50px;
+    right:45px;
+    width: 48px;
+    height:48px;
+    background-color:#72cdfa;
+}
+.moon::before{
+    top:12.8px;
+    right:3.2px;
+    width:19.2px;
+    height:19.2px;
+    background-color:#ccc;
+}
+@keyframes orbit{
+    to{
+            transform:rotate(360deg);
+    }
+}
